@@ -11,7 +11,7 @@ let jwt = require("jsonwebtoken");
 
 router.get("/", verify, async function(req,res){
 
-    // (1) Consulta a la BD para recuperar todas las tareas
+    // Consulta a la BD para recuperar todas las tareas
     let tasks = await Task.find({user_id: req.userId})
    // console.log(tasks)
     res.render("index", {tasks})
